@@ -19,6 +19,14 @@ buildscript {
     }
 }
 
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url "http://dl.bintray.com/kotlin/kotlin-eap-1.1" }
+}
+
 sourceSets {
 	main.java.srcDirs += 'src/main/kotlin'
 	main.resources.srcDirs += 'src/main/resources'
@@ -26,8 +34,8 @@ sourceSets {
 }
 
 dependencies {
-	compile 'org.springframework.boot:spring-boot-starter:$springBootVersion'
-	compile 'org.springframework.boot:spring-boot-autoconfigure:$springBootVersion'
+	compile "org.springframework.boot:spring-boot-starter:$springBootVersion"
+	compile "org.springframework.boot:spring-boot-autoconfigure:$springBootVersion"
 	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
 }
